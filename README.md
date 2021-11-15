@@ -2,7 +2,7 @@
 Гра "Тетрис" написана мовою Java з використанням JavaFX та Gradle
 
 ### Тема
-Проєкт з Java "Гра Тетрис".
+Проєкт з Java "Гра Тетрис"
 ### Мета
 Розробити гру "Тетрис" мовою програмування Java
 ### Назва команди проєкту
@@ -10,10 +10,10 @@ GrandRain
 ### Керівник проєкту
 Вечер Максим
 ### Учасники проєкту
- - Вечер Максим — організація взаємодії з користувачем, обробка подій та збірка
+ - [Вечер Максим](https://github.com/Ieeht) — організація взаємодії з користувачем, обробка подій та збірка
  - Гандзюк Володимир — тестування та виявлення помилок
  - Новосад Вероніка — графічна частина
- - Паламарчук Ярослав — логічна частина
+ - [Паламарчук Ярослав](https://github.com/dripthugger) — логічна частина
  - Турчиняк Денис - звуковий та музичний супровід
 ### План
  - [x] [01.11.21] ~~Опис плану проєкта~~
@@ -37,11 +37,11 @@ GrandRain
 - [ ] Налаштування
 - [ ] Таблиця результатів
 ### Інструменти
-- Java Development Kit 16.0.2
-- JavaFX 16
-- Gradle 7.1.1
-- Shadow 7.1.0
-- IntelliJ IDEA Community 2021.2.3
-- Git 2.33
-- GitHub
-- Шрифт Montserrat
+- [Java Development Kit Standard Edition 16.0.2](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html)
+- [JavaFX 16](https://gluonhq.com/products/javafx)
+- [Gradle 7.1.1](https://github.com/gradle/gradle)
+- [Shadow 7.1.0](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
+- [IntelliJ IDEA Community 2021.2.3](https://www.jetbrains.com/ru-ru/idea)
+- [Git 2.33](https://github.com/git/git)
+- [GitHub](https://github.com)
+- [Шрифт Montserrat](https://fonts.google.com/specimen/Montserrat)
