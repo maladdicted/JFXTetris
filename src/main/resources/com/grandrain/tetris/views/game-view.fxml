@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <BorderPane id="gameBoard" styleClass="gameBoard">
+      <center>
+         <GridPane id="gamePanel" hgap="1" layoutX="40" layoutY="30" vgap="1" />
+      </center>
+   </BorderPane>
+
+   <VBox id="menu" alignment="CENTER" layoutX="243" layoutY="20">
+      <ImageView>
+         <Image url="@../images/icon.png" />
+      </ImageView>
+      <Text id="title">ТЕТРИС</Text>
+      <VBox alignment="CENTER">
+         <Label styleClass="score" text="Рахунок:" />
+         <Text id="score" styleClass="score" text="0" />
+      </VBox>
+      <Button prefWidth="130" styleClass="menu-button" text="Нова Гра" />
+      <ToggleButton prefWidth="130" styleClass="menu-button" text="Пауза" />
+      <VBox id="help">
+
+         <Text wrappingWidth="130">
+            A,W,S,D - переміщення та обертання
+         </Text>
+         <Text wrappingWidth="130">
+            N - почати нову гру
+         </Text>
+         <Text wrappingWidth="130">
+            ESC - пауза / відновити
+         </Text>
+
+      </VBox>
+   </VBox>
+   <stylesheets>
+      <URL value="@../style.css" />
+   </stylesheets>
+</Pane>
