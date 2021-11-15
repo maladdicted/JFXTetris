@@ -40,6 +40,7 @@ GrandRain
 - [JavaFX 16](https://gluonhq.com/products/javafx)
 - [Gradle 7.1.1](https://github.com/gradle/gradle)
 - [Shadow 7.1.0](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
+- [gradle-launch4j 2.5.1](https://github.com/TheBoegl/gradle-launch4j)
 - [IntelliJ IDEA Community 2021.2.3](https://www.jetbrains.com/ru-ru/idea)
 - [Git 2.33](https://github.com/git/git)
 - [GitHub](https://github.com)

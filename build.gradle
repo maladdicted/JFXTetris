@@ -3,17 +3,27 @@ plugins {
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.10'
     id 'com.github.johnrengelman.shadow' version '7.1.0'
+    id 'edu.sc.seis.launch4j' version '2.5.1'
 }
 
 group 'com.grandrain'
 version '1.0.0-ALPHA'
 
 shadowJar {
+    archiveFileName = "Tetris.jar"
     manifest {
         attributes 'Main-Class': 'com.grandrain.tetris.Main'
         attributes 'Implementation-Title': 'Тетрис'
         attributes 'Implementation-Version': '1.0.0-ALPHA'
     }
+}
+
+launch4j {
+    jar = "${projectDir}/build/libs/Tetris.jar"
+    mainClassName = 'com.grandrain.tetris.Main'
+    outputDir = "libs"
+    outfile = "Tetris.exe"
+    icon = "${projectDir}/etc/app.ico"
 }
 
 repositories {
