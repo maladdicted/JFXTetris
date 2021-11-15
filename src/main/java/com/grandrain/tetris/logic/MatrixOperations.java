@@ -1,4 +1,4 @@
-package com.quirko.logic;
+package com.grandrain.tetris.logic;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

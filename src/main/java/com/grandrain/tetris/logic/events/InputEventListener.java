@@ -1,7 +1,7 @@
-package com.quirko.logic.events;
+package com.grandrain.tetris.logic.events;
 
-import com.quirko.logic.ViewData;
-import com.quirko.logic.DownData;
+import com.grandrain.tetris.logic.ViewData;
+import com.grandrain.tetris.logic.DownData;
 
 public interface InputEventListener {
 

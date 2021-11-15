@@ -1,4 +1,4 @@
-package com.quirko.logic;
+package com.grandrain.tetris.logic;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;

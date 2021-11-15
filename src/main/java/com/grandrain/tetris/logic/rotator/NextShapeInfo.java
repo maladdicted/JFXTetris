@@ -1,6 +1,6 @@
-package com.quirko.logic.rotator;
+package com.grandrain.tetris.logic.rotator;
 
-import com.quirko.logic.MatrixOperations;
+import com.grandrain.tetris.logic.MatrixOperations;
 
 public final class NextShapeInfo {
 

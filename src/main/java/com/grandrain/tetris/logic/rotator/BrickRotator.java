@@ -1,6 +1,6 @@
-package com.quirko.logic.rotator;
+package com.grandrain.tetris.logic.rotator;
 
-import com.quirko.logic.bricks.Brick;
+import com.grandrain.tetris.logic.bricks.Brick;
 
 public class BrickRotator {
 

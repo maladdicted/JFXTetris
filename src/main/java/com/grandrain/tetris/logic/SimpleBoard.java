@@ -1,10 +1,10 @@
-package com.quirko.logic;
+package com.grandrain.tetris.logic;
 
-import com.quirko.logic.bricks.Brick;
-import com.quirko.logic.bricks.BrickGenerator;
-import com.quirko.logic.bricks.RandomBrickGenerator;
-import com.quirko.logic.rotator.BrickRotator;
-import com.quirko.logic.rotator.NextShapeInfo;
+import com.grandrain.tetris.logic.bricks.Brick;
+import com.grandrain.tetris.logic.bricks.BrickGenerator;
+import com.grandrain.tetris.logic.bricks.RandomBrickGenerator;
+import com.grandrain.tetris.logic.rotator.BrickRotator;
+import com.grandrain.tetris.logic.rotator.NextShapeInfo;
 
 import java.awt.*;
 

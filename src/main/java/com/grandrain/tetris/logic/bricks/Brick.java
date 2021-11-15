@@ -1,4 +1,4 @@
-package com.quirko.logic.bricks;
+package com.grandrain.tetris.logic.bricks;
 
 import java.util.List;
 

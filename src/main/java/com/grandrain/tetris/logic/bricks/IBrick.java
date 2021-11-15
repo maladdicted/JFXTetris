@@ -1,6 +1,6 @@
-package com.quirko.logic.bricks;
+package com.grandrain.tetris.logic.bricks;
 
-import com.quirko.logic.MatrixOperations;
+import com.grandrain.tetris.logic.MatrixOperations;
 
 import java.util.ArrayList;
 import java.util.List;

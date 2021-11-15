@@ -1,4 +1,4 @@
-package com.quirko.logic.events;
+package com.grandrain.tetris.logic.events;
 
 public final class MoveEvent {
     private final EventType eventType;
