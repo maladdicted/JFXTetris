@@ -64,6 +64,18 @@ launch4j {
 
 dependencies {
     testImplementation('org.testng:testng:7.4.0')
+    implementation group: 'org.openjfx', name: 'javafx-base', version: 16, classifier: 'win'
+    implementation group: 'org.openjfx', name: 'javafx-base', version: 16, classifier: 'mac'
+    implementation group: 'org.openjfx', name: 'javafx-base', version: 16, classifier: 'linux'
+    implementation group: 'org.openjfx', name: 'javafx-controls', version: 16, classifier: 'win'
+    implementation group: 'org.openjfx', name: 'javafx-controls', version: 16, classifier: 'mac'
+    implementation group: 'org.openjfx', name: 'javafx-controls', version: 16, classifier: 'linux'
+    implementation group: 'org.openjfx', name: 'javafx-fxml', version: 16, classifier: 'win'
+    implementation group: 'org.openjfx', name: 'javafx-fxml', version: 16, classifier: 'mac'
+    implementation group: 'org.openjfx', name: 'javafx-fxml', version: 16, classifier: 'linux'
+    implementation group: 'org.openjfx', name: 'javafx-graphics', version: 16, classifier: 'win'
+    implementation group: 'org.openjfx', name: 'javafx-graphics', version: 16, classifier: 'mac'
+    implementation group: 'org.openjfx', name: 'javafx-graphics', version: 16, classifier: 'linux'
 }
 
 test {
