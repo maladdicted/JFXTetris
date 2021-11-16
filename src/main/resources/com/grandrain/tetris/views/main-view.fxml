@@ -6,7 +6,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<Pane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.grandrain.tetris.controllers.MainController">
    <BorderPane id="gameBoard" styleClass="gameBoard">
       <center>
          <GridPane id="gamePanel" hgap="1" layoutX="40" layoutY="30" vgap="1" />
@@ -24,6 +25,7 @@
       </VBox>
       <Button prefWidth="130" styleClass="menu-button" text="Нова Гра" />
       <ToggleButton prefWidth="130" styleClass="menu-button" text="Пауза" />
+      <Button prefWidth="130" styleClass="menu-button" text="Інформація" onAction="#infoButtonClick" />
       <VBox id="help">
 
          <Text wrappingWidth="130">
