@@ -9,23 +9,6 @@ plugins {
 group 'com.grandrain'
 version '1.0.0-ALPHA'
 
-shadowJar {
-    archiveFileName = "Tetris.jar"
-    manifest {
-        attributes 'Main-Class': 'com.grandrain.tetris.Main'
-        attributes 'Implementation-Title': 'Тетрис'
-        attributes 'Implementation-Version': '1.0.0-ALPHA'
-    }
-}
-
-launch4j {
-    jar = "${projectDir}/build/libs/Tetris.jar"
-    mainClassName = 'com.grandrain.tetris.Main'
-    outputDir = "libs"
-    outfile = "Tetris.exe"
-    icon = "${projectDir}/etc/app.ico"
-}
-
 repositories {
     mavenCentral()
 }
