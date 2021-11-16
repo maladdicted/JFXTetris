@@ -23,7 +23,7 @@ launch4j {
     mainClassName = 'com.grandrain.tetris.Main'
     outputDir = "libs"
     outfile = "Tetris.exe"
-    icon = "${projectDir}/etc/app.ico"
+    icon = "${projectDir}/etc/icon.ico"
 }
 
 repositories {
