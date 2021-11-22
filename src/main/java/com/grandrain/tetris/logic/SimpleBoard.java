@@ -43,43 +43,34 @@ public class SimpleBoard implements Board {
 
 
     @Override
-    public boolean moveBrickLeft() {
+    public void moveBrickLeft() {
         int[][] currentMatrix = MatrixOperations.copy(currentGameMatrix);
         Point p = new Point(currentOffset);
         p.translate(-1, 0);
         boolean conflict = MatrixOperations.intersect(currentMatrix, brickRotator.getCurrentShape(), (int) p.getX(), (int) p.getY());
-        if (conflict) {
-            return false;
-        } else {
+        if (!conflict) {
             currentOffset = p;
-            return true;
         }
     }
 
     @Override
-    public boolean moveBrickRight() {
+    public void moveBrickRight() {
         int[][] currentMatrix = MatrixOperations.copy(currentGameMatrix);
         Point p = new Point(currentOffset);
         p.translate(1, 0);
         boolean conflict = MatrixOperations.intersect(currentMatrix, brickRotator.getCurrentShape(), (int) p.getX(), (int) p.getY());
-        if (conflict) {
-            return false;
-        } else {
+        if (!conflict) {
             currentOffset = p;
-            return true;
         }
     }
 
     @Override
-    public boolean rotateLeftBrick() {
+    public void rotateLeftBrick() {
         int[][] currentMatrix = MatrixOperations.copy(currentGameMatrix);
         NextShapeInfo nextShape = brickRotator.getNextShape();
         boolean conflict = MatrixOperations.intersect(currentMatrix, nextShape.getShape(), (int) currentOffset.getX(), (int) currentOffset.getY());
-        if (conflict) {
-            return false;
-        } else {
+        if (!conflict) {
             brickRotator.setCurrentShape(nextShape.getPosition());
-            return true;
         }
     }
 

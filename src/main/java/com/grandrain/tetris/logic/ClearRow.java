@@ -1,16 +1,6 @@
 package com.grandrain.tetris.logic;
 
-public final class ClearRow {
-
-    private final int linesRemoved;
-    private final int[][] newMatrix;
-    private final int scoreBonus;
-
-    public ClearRow(int linesRemoved, int[][] newMatrix, int scoreBonus) {
-        this.linesRemoved = linesRemoved;
-        this.newMatrix = newMatrix;
-        this.scoreBonus = scoreBonus;
-    }
+public record ClearRow(int linesRemoved, int[][] newMatrix, int scoreBonus) {
 
     public int getLinesRemoved() {
         return linesRemoved;

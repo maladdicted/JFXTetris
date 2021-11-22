@@ -4,11 +4,11 @@ public interface Board {
 
     boolean moveBrickDown();
 
-    boolean moveBrickLeft();
+    void moveBrickLeft();
 
-    boolean moveBrickRight();
+    void moveBrickRight();
 
-    boolean rotateLeftBrick();
+    void rotateLeftBrick();
 
     boolean createNewBrick();
 
