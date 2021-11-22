@@ -18,6 +18,11 @@ Button, ToggleButton {
     -fx-cursor: hand;
 }
 
+#gameBoard {
+    -fx-border-color: gainsboro;
+    -fx-border-width: 12px;
+}
+
 #menu {
     -fx-spacing: 12;
 }
@@ -48,4 +53,9 @@ Button, ToggleButton {
 
 #help Text {
     -fx-font-size: 10px;
+}
+
+.game-over {
+    -fx-font-size: 32;
+    -fx-background-color: red;
 }
