@@ -17,4 +17,6 @@ module com.grandrain.tetris {
     opens com.grandrain.tetris.controllers to javafx.fxml;
     exports com.grandrain.tetris.gui;
     opens com.grandrain.tetris.gui to javafx.fxml;
+    exports com.grandrain.tetris.data;
+    opens com.grandrain.tetris.data to javafx.graphics;
 }
