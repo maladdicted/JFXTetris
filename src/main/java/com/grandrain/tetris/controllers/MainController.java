@@ -1,5 +1,7 @@
 package com.grandrain.tetris.controllers;
 
+import com.grandrain.tetris.App;
+import com.grandrain.tetris.Audio;
 import com.grandrain.tetris.gui.GameOverPane;
 import com.grandrain.tetris.logic.DownData;
 import com.grandrain.tetris.logic.ViewData;
@@ -24,10 +26,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -63,8 +67,9 @@ public class MainController implements Initializable {
 
     private final BooleanProperty isGameOver = new SimpleBooleanProperty();
 
-    @Override
+    @FXML
     public void initialize(URL location, ResourceBundle resources) {
+        Audio.playMusic();
         gamePane.setFocusTraversable(true);
         gamePane.requestFocus();
         gamePane.setOnKeyPressed(keyEvent -> {
@@ -205,11 +210,12 @@ public class MainController implements Initializable {
         timeLine.stop();
         gameOverPane.setVisible(true);
         isGameOver.setValue(Boolean.TRUE);
-
+        Audio.playGameOver();
     }
 
     @FXML
     public void newGame() {
+        Audio.stopMusic();
         timeLine.stop();
         gameOverPane.setVisible(false);
         eventListener.createNewGame();
@@ -217,6 +223,7 @@ public class MainController implements Initializable {
         timeLine.play();
         isPause.setValue(Boolean.FALSE);
         isGameOver.setValue(Boolean.FALSE);
+        Audio.playMusic();
     }
 
     @FXML
@@ -225,13 +232,20 @@ public class MainController implements Initializable {
     }
 
     @FXML
+    public void showSettingView() throws IOException {
+        pauseButton.setSelected(true);
+        App.load("settings", "Налаштування", new Stage());
+        gamePane.requestFocus();
+    }
+
+    @FXML
     private void showInfo() throws Exception {
-        timeLine.pause();
+        pauseButton.setSelected(true);
         Alert alert = new Alert(AlertType.INFORMATION, null, ButtonType.YES, ButtonType.NO);
         alert.initStyle(StageStyle.UTILITY);
         alert.setTitle("Інформація");
         alert.setHeaderText("""
-                Версія 1.0.0-ALPHA
+                Версія 1.1.0-BETA
                 https://github.com/Ieeht/JFXTetris
                 Перейти до репозиторію?""");
         alert.setContentText("""
@@ -245,6 +259,7 @@ public class MainController implements Initializable {
         if (alert.getResult() == ButtonType.YES) {
             Desktop.getDesktop().browse(new URI("https://github.com/Ieeht/JFXTetris"));
         }
-        timeLine.play();
+        gamePane.requestFocus();
     }
+
 }
