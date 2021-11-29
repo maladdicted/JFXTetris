@@ -22,24 +22,19 @@ GrandRain
  - [x] ~~Вибір бібліотек та інструментів~~
  - [x] ~~Визначення структури проєкта~~
  - [x] ~~Розробка основної частини гри~~
- - [x] ~~Перше альфа-тестування~~
- - [ ] Введення звукового й музичного супровіду, їх налаштування
- - [ ] Друге альфа-тестування
- - [ ] Допрацювання
- - [ ] Закрите бета-тестування
- - [ ] Випуск продукту
- - [ ] Презентація продукту
+ - [x] ~~Введення звукового й музичного супровіду, їх налаштування~~
 ### Можливості
 - [x] Багатоплатформність
 - [x] Меню
 - [x] Інформація 
 - [x] Гра
 - [x] Рахунок
-- [ ] Звуковий та музичний супровід
-- [ ] Налаштування
+- [x] Звуковий та музичний супровід
+- [x] Налаштування
 ### Інструменти
 - [Java Development Kit Standard Edition 16.0.2](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html)
 - [JavaFX 16](https://gluonhq.com/products/javafx)
+- [Ini4J 0.5.4](https://mvnrepository.com/artifact/org.ini4j/ini4j)
 - [Gradle 7.1.1](https://github.com/gradle/gradle)
 - [Shadow 7.1.0](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
 - [gradle-launch4j 2.5.1](https://github.com/TheBoegl/gradle-launch4j)
