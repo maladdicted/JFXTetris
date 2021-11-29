@@ -16,3 +16,8 @@ Slider .thumb {
      -fx-background-radius: 4;
      -fx-border-radius: 4;
 }
+
+#info-button {
+    -fx-padding: 3 8;
+    -fx-font-size: 18;
+}

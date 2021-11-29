@@ -1,0 +1,14 @@
+VBox {
+    -fx-padding: 8 8 16 8;
+    -fx-spacing: 12;
+}
+
+TextArea {
+    -fx-font-size: 16;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+TextArea .content {
+    -fx-background-color: transparent;
+}

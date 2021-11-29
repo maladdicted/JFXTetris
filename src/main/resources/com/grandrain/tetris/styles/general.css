@@ -18,7 +18,7 @@ Button, ToggleButton {
     -fx-padding: 8;
     -fx-background-radius: 9, 8, 5, 4, 3;
     -fx-background-color: linear-gradient(to bottom, #074e85, #074e85 50%, #003761 50%, #003761);
-    -fx-font-size: 14px;
+    -fx-font-size: 13.25px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
     -fx-effect: dropshadow(one-pass-box, rgb(9, 93, 159), 0, 1.0, 0, 5);
