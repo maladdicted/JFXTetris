@@ -23,6 +23,7 @@ GrandRain
  - [x] ~~Визначення структури проєкта~~
  - [x] ~~Розробка основної частини гри~~
  - [x] ~~Введення звукового й музичного супровіду, їх налаштування~~
+ - [x] ~~Введення системи збереження результатів~~
 ### Можливості
 - [x] Багатоплатформність
 - [x] Меню
@@ -31,6 +32,7 @@ GrandRain
 - [x] Рахунок
 - [x] Звуковий та музичний супровід
 - [x] Налаштування
+- [x] Результати
 ### Інструменти
 - [Java Development Kit Standard Edition 16.0.2](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html)
 - [JavaFX 16](https://gluonhq.com/products/javafx)
