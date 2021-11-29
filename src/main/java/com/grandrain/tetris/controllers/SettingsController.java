@@ -1,16 +1,21 @@
 package com.grandrain.tetris.controllers;
 
 import com.grandrain.tetris.Audio;
-import com.grandrain.tetris.Data;
+import com.grandrain.tetris.data.Config;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Slider;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,8 +29,8 @@ public class SettingsController implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        effectsVolume.setValue(Data.getEffectsVolume());
-        musicVolume.setValue(Data.getMusicVolume());
+        effectsVolume.setValue(Config.getEffectsVolume());
+        musicVolume.setValue(Config.getMusicVolume());
     }
 
     @FXML
@@ -39,14 +44,42 @@ public class SettingsController implements Initializable {
     }
 
     @FXML
-    public void applyConfig() throws IOException {
-        Data.applyConfig(effectsVolume.getValue(), musicVolume.getValue());
+    private void showInfo() throws Exception {
+        ButtonType yesButton = new ButtonType("Так");
+        ButtonType noButton = new ButtonType("Ні");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, null, yesButton, noButton);
+        alert.initStyle(StageStyle.UTILITY);
+        alert.setTitle("Інформація");
+        alert.setHeaderText("""
+                Версія 1.2.0
+                https://github.com/Ieeht/JFXTetris
+                Перейти до репозиторію?""");
+
+        alert.setContentText("""
+                Над проєктом працювали студенти групи ІТ-41:
+                Вечер Максим — програміст
+                Гандзюк Володимир — тестувальник
+                Новосад Вероніка — дизайнер
+                Паламарчук Ярослав — кодер
+                Турчиняк Денис — звукорежисер""");
+
+        alert.showAndWait();
+
+        if (alert.getResult() == yesButton) {
+            Desktop.getDesktop().browse(new URI("https://github.com/Ieeht/JFXTetris"));
+        }
+    }
+
+    @FXML
+    public void applyConfig(ActionEvent e) throws IOException {
+        Config.write(effectsVolume.getValue(), musicVolume.getValue());
+        close(e);
     }
 
     @FXML
     public void close(ActionEvent e) {
-        Audio.setEffectsVolume(Data.getEffectsVolume());
-        Audio.setMusicVolume(Data.getMusicVolume());
+        Audio.setEffectsVolume(Config.getEffectsVolume());
+        Audio.setMusicVolume(Config.getMusicVolume());
         Node source = (Node) e.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
