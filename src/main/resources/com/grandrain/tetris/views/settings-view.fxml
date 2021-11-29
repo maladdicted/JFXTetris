@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.geometry.Insets?>
+<Pane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.grandrain.tetris.controllers.SettingsController">
+
+   <VBox>
+      <HBox>
+         <Text>Ефекти</Text>
+         <Slider fx:id="effectsVolume" prefWidth="250" max="1.0" onValueChange="#setEffectsVolume" />
+      </HBox>
+      <HBox>
+         <Text>Музика</Text>
+         <Slider fx:id="musicVolume" prefWidth="250" max="1.0" onValueChange="#setMusicVolume" />
+      </HBox>
+      <HBox id="btn-pane">
+         <Pane id="separator" HBox.hgrow="ALWAYS" />
+         <Button prefWidth="120" text="Скасувати" onAction="#close"/>
+         <Button prefWidth="120" text="Застосувати" onAction="#applyConfig">
+            <HBox.margin>
+               <Insets>
+                  <left>4</left>
+               </Insets>
+            </HBox.margin>
+         </Button>
+      </HBox>
+   </VBox>
+   <stylesheets>
+      <URL value="@../styles/general.css" />
+      <URL value="@../styles/settings.css" />
+   </stylesheets>
+
+</Pane>
