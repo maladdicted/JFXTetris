@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'com.grandrain'
-version '1.1.0-BETA'
+version '1.2.0'
 
 repositories {
     mavenCentral()
@@ -32,7 +32,7 @@ shadowJar {
     manifest {
         attributes 'Main-Class': 'com.grandrain.tetris.Main'
         attributes 'Implementation-Title': 'Тетріс'
-        attributes 'Implementation-Version': '1.1.0-BETA'
+        attributes 'Implementation-Version': '1.2.0'
     }
 }
 
@@ -44,8 +44,8 @@ launch4j {
     outfile = "Tetris.exe"
     icon = "${projectDir}/app.ico"
     fileDescription = "Tetris"
-    version = "1.1.0-BETA"
-    textVersion = "1.1.0-BETA"
+    version = "1.2.0"
+    textVersion = "1.2.0"
     copyright = "Grand Rain"
     companyName = "Grand Rain"
     productName = "Tetris"
