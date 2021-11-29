@@ -1,12 +1,13 @@
 package com.grandrain.tetris;
 
+import com.grandrain.tetris.data.Config;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 import java.util.Objects;
 
-public final class Audio {
+public class Audio {
 
     private static MediaPlayer player;
     private static double effectsVolume;
@@ -23,7 +24,7 @@ public final class Audio {
 
     public static void playMusic() {
         player = createPlayer("soundtrack");
-        player.setVolume(Data.getMusicVolume());
+        player.setVolume(Config.getMusicVolume());
 
         player.setOnEndOfMedia(() -> {
             player.seek(Duration.ZERO);
@@ -46,7 +47,7 @@ public final class Audio {
     }
 
     private static MediaPlayer createPlayer(String file) {
-        effectsVolume = Data.getEffectsVolume();
+        effectsVolume = Config.getEffectsVolume();
 
         Media media = new Media(Objects.requireNonNull(
                 Audio.class.getResource("/com/grandrain/tetris/audio/" + file + ".mp3")).toExternalForm()
