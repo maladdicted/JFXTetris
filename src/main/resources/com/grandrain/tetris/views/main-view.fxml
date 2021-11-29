@@ -8,8 +8,11 @@
 
 <?import javafx.scene.Group?>
 <?import com.grandrain.tetris.gui.GameOverPane?>
-<Pane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+<Pane prefWidth="400" prefHeight="510"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.grandrain.tetris.controllers.MainController">
+
    <GridPane fx:id="brickPane" vgap="1" hgap="1"/>
    <BorderPane id="gameBoard">
       <center>
@@ -26,9 +29,10 @@
          <Label styleClass="score" text="Рахунок:" />
          <Text fx:id="scoreValue" styleClass="score" text="0" />
       </VBox>
-      <Button prefWidth="130" styleClass="menu-button" text="Нова Гра" onAction="#newGame" />
+      <Button prefWidth="130" styleClass="menu-btn" text="Нова Гра" onAction="#newGame" />
       <ToggleButton fx:id="pauseButton" prefWidth="130" styleClass="menu-button" text="Пауза" onAction="#pauseGame" />
-      <Button prefWidth="130" styleClass="menu-button" text="Інформація" onAction="#showInfo" />
+      <Button prefWidth="130" styleClass="menu-btn" text="Налаштування" onAction="#showSettingView" />
+      <Button prefWidth="130" styleClass="menu-btn" text="Інформація" onAction="#showInfo" />
       <VBox id="help">
 
          <Text wrappingWidth="130">
@@ -49,6 +53,8 @@
       </VBox>
    </Group>
    <stylesheets>
-      <URL value="@../style.css" />
+      <URL value="@../styles/general.css" />
+      <URL value="@../styles/main.css" />
    </stylesheets>
+
 </Pane>
