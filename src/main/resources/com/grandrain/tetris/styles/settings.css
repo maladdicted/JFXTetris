@@ -1,0 +1,18 @@
+VBox, Hbox {
+    -fx-padding: 16;
+    -fx-spacing: 24;
+}
+
+Text {
+    -fx-font-size: 14;
+}
+
+Button {
+    -fx-padding: 6;
+}
+
+Slider .thumb {
+     -fx-padding: 12 8;
+     -fx-background-radius: 4;
+     -fx-border-radius: 4;
+}

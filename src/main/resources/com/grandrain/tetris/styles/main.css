@@ -1,0 +1,31 @@
+#gameBoard {
+    -fx-border-color: gainsboro;
+    -fx-border-width: 12px;
+}
+
+#menu {
+    -fx-spacing: 12;
+}
+
+.score {
+    -fx-font-size: 20;
+}
+
+#title {
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+}
+
+#help {
+    -fx-padding: 8;
+    -fx-spacing: 4;
+}
+
+#help Text {
+    -fx-font-size: 10px;
+}
+
+.game-over {
+    -fx-font-size: 32;
+    -fx-background-color: red;
+}
