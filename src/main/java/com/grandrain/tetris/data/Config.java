@@ -1,16 +1,16 @@
-package com.grandrain.tetris;
+package com.grandrain.tetris.data;
 
 import java.io.File;
 import java.io.IOException;
 
 import org.ini4j.Wini;
 
-public final class Data {
+public class Config {
 
     private static Wini wini;
 
-    public static void reload() throws IOException {
-        File file = new File("data.ini");
+    public static void read() throws IOException {
+        File file = new File("config.ini");
         if (file.createNewFile()) {
             wini = new Wini();
             wini.add("config", "effects", 0.1);
@@ -25,7 +25,7 @@ public final class Data {
 
     public static double getMusicVolume() { return getValue("music"); }
 
-    public static void applyConfig(double effectsVolume, double musicVolume) throws IOException {
+    public static void write(double effectsVolume, double musicVolume) throws IOException {
         wini.put("config", "effects", effectsVolume);
         wini.put("config", "music", musicVolume);
         wini.store();
