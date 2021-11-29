@@ -2,4 +2,5 @@
 /.gradle/
 /build/
 /build/classes/java/main/
-/data.ini
+/config.ini
+/scores.txt
