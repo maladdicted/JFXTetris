@@ -2,6 +2,8 @@ package com.grandrain.tetris.controllers;
 
 import com.grandrain.tetris.App;
 import com.grandrain.tetris.Audio;
+import com.grandrain.tetris.data.Config;
+import com.grandrain.tetris.data.Scores;
 import com.grandrain.tetris.gui.GameOverPane;
 import com.grandrain.tetris.logic.DownData;
 import com.grandrain.tetris.logic.ViewData;
@@ -15,9 +17,6 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.effect.Reflection;
 import javafx.scene.input.KeyCode;
@@ -26,13 +25,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-import java.awt.*;
 import java.io.IOException;
-import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -207,6 +204,11 @@ public class MainController implements Initializable {
     }
 
     public void gameOver() {
+        try {
+            Scores.write(scoreValue.getText());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         timeLine.stop();
         gameOverPane.setVisible(true);
         isGameOver.setValue(Boolean.TRUE);
@@ -233,32 +235,25 @@ public class MainController implements Initializable {
 
     @FXML
     public void showSettingView() throws IOException {
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        stage.setOnCloseRequest(e -> {
+            Audio.setEffectsVolume(Config.getEffectsVolume());
+            Audio.setMusicVolume(Config.getMusicVolume());
+        });
+
         pauseButton.setSelected(true);
-        App.load("settings", "Налаштування", new Stage());
+        App.load("settings", "Налаштування", stage);
         gamePane.requestFocus();
     }
 
     @FXML
-    private void showInfo() throws Exception {
+    public void showScoresView() throws IOException {
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
         pauseButton.setSelected(true);
-        Alert alert = new Alert(AlertType.INFORMATION, null, ButtonType.YES, ButtonType.NO);
-        alert.initStyle(StageStyle.UTILITY);
-        alert.setTitle("Інформація");
-        alert.setHeaderText("""
-                Версія 1.1.0-BETA
-                https://github.com/Ieeht/JFXTetris
-                Перейти до репозиторію?""");
-        alert.setContentText("""
-                Над проєктом працювали студенти групи ІТ-41:
-                Вечер Максим — програміст
-                Гандзюк Володимир — тестувальник
-                Новосад Вероніка — дизайнер
-                Паламарчук Ярослав — кодер
-                Турчиняк Денис — звукорежисер""");
-        alert.showAndWait();
-        if (alert.getResult() == ButtonType.YES) {
-            Desktop.getDesktop().browse(new URI("https://github.com/Ieeht/JFXTetris"));
-        }
+        App.load("scores", "Результати", stage);
         gamePane.requestFocus();
     }
 
