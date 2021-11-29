@@ -1,5 +1,6 @@
 package com.grandrain.tetris.controllers;
 
+import com.grandrain.tetris.Audio;
 import com.grandrain.tetris.logic.*;
 import com.grandrain.tetris.logic.events.EventSource;
 import com.grandrain.tetris.logic.events.InputEventListener;
@@ -28,16 +29,18 @@ public class GameController implements InputEventListener {
             clearRow = board.clearRows();
             if (clearRow.getLinesRemoved() > 0) {
                 board.getScore().add(clearRow.getScoreBonus());
+                Audio.playRowClear();
             }
             if (board.createNewBrick()) {
                 mainController.gameOver();
             }
 
             mainController.refreshGameBackground(board.getBoardMatrix());
-
+            Audio.playBrickHit();
         } else {
             if (event.getEventSource() == EventSource.USER) {
                 board.getScore().add(1);
+                Audio.playForceHit();
             }
         }
         return new DownData(clearRow, board.getViewData());
@@ -58,6 +61,7 @@ public class GameController implements InputEventListener {
     @Override
     public ViewData onRotateEvent(MoveEvent event) {
         board.rotateLeftBrick();
+        Audio.playBrickRotate();
         return board.getViewData();
     }
 
