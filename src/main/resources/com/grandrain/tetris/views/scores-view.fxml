@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane xmlns="http://javafx.com/javafx/16"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.grandrain.tetris.controllers.ScoresController">
+
+   <VBox>
+      <TextArea fx:id="textArea" editable="false" prefHeight="392" prefWidth="386" />
+      <HBox>
+         <Button text="Скинути" prefWidth="189" onAction="#clear"/>
+         <Pane HBox.hgrow="ALWAYS" />
+         <Button text="Копіювати" prefWidth="189" onAction="#copy" />
+      </HBox>
+      <Button text="Закрити" prefWidth="386" onAction="#close" />
+   </VBox>
+   <stylesheets>
+      <URL value="@../styles/general.css" />
+      <URL value="@../styles/scores.css" />
+   </stylesheets>
+
+</Pane>
