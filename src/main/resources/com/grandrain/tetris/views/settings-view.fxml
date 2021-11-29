@@ -6,8 +6,8 @@
 <?import javafx.scene.text.*?>
 
 <?import javafx.geometry.Insets?>
-<Pane xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
+<Pane xmlns="http://javafx.com/javafx/16"
+      xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.grandrain.tetris.controllers.SettingsController">
 
    <VBox>
@@ -20,8 +20,9 @@
          <Slider fx:id="musicVolume" prefWidth="250" max="1.0" onValueChange="#setMusicVolume" />
       </HBox>
       <HBox id="btn-pane">
-         <Pane id="separator" HBox.hgrow="ALWAYS" />
-         <Button prefWidth="120" text="Скасувати" onAction="#close"/>
+         <Button id="info-button" text="🛈" onAction="#showInfo" />
+         <Pane HBox.hgrow="ALWAYS" />
+         <Button prefWidth="120" text="Скасувати" onAction="#close" />
          <Button prefWidth="120" text="Застосувати" onAction="#applyConfig">
             <HBox.margin>
                <Insets>
