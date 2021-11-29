@@ -1,9 +1,10 @@
 package com.grandrain.tetris;
 
-import com.grandrain.tetris.views.MainView;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        MainView.main(args);
+    public static void main(String[] args) throws IOException {
+        Data.reload();
+        App.main();
     }
 }
